@@ -8,13 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
-    @IBOutlet weak var QuestionLabel: UILabel!
-    @IBOutlet weak var questonTV1: UITextView!
+    
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var answerPickerView: UIPickerView!
+    @IBOutlet weak var questionTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        answerPickerView.dataSource = self
+        answerPickerView.delegate = self
+        
+        setupCardUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +28,27 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func setupCardUI() {
+        questionTextView.text = CardCollection.instance.CurrentCard.question
 
+        questionLabel.text = "Question \(CardCollection.instance.currentIndex + 1)/\(CardCollection.instance.cards.count)"
+    }
+    
+    
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1;
+    }
+    
+    
+    // returns the # of rows in each component..
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return CardCollection.instance.CurrentCard.options.count
+    }
+    
+    // Pickerview delegates
+    // returns text of option at a given row.
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return CardCollection.instance.CurrentCard.options[row];
+    }
 }
 

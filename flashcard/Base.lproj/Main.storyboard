@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad12_9" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,26 +19,29 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ucf-TW-FFT">
-                                <rect key="frame" x="5" y="0.0" width="1014" height="586.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ucf-TW-FFT">
+                                <rect key="frame" x="5" y="0.0" width="404" height="586.33333333333337"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="QUESTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOg-Tg-VJ8">
-                                        <rect key="frame" x="0.0" y="0.0" width="1014" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUESTION" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOg-Tg-VJ8">
+                                        <rect key="frame" x="0.0" y="0.0" width="404" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="C7c-1s-grm"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Photo on 7-18-17 at 5.11 PM" translatesAutoresizingMaskIntoConstraints="NO" id="LV0-2X-1mM">
-                                        <rect key="frame" x="0.0" y="20.5" width="1014" height="300"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo on 7-18-17 at 5.11 PM" translatesAutoresizingMaskIntoConstraints="NO" id="LV0-2X-1mM">
+                                        <rect key="frame" x="0.0" y="80" width="404" height="300"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="Vs4-ua-lbT"/>
                                         </constraints>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="HOW MANY SPOONS DOES BARD HAVE??????" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sTb-Jj-ij8">
-                                        <rect key="frame" x="0.0" y="320.5" width="1014" height="50"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="HOW MANY SPOONS DOES BARD HAVE??????" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sTb-Jj-ij8">
+                                        <rect key="frame" x="0.0" y="380" width="404" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="xqs-sn-En0"/>
@@ -46,25 +49,36 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="78Z-Yo-dq3">
-                                        <rect key="frame" x="0.0" y="370.5" width="1014" height="216"/>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78Z-Yo-dq3">
+                                        <rect key="frame" x="0.0" y="430" width="404" height="156.33333333333337"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="390" id="QDL-vS-EeP"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="FqW-IV-and"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="pFK-0N-YPa"/>
+                                        </connections>
                                     </pickerView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ucf-TW-FFT" secondAttribute="bottom" constant="149.66666666666663" id="94v-We-duM"/>
+                            <constraint firstItem="ucf-TW-FFT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="BXQ-EJ-fQP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ucf-TW-FFT" secondAttribute="trailing" constant="-15" id="tSO-eO-bfB"/>
                             <constraint firstItem="ucf-TW-FFT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-15" id="wiM-ia-SFu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="QuestionTextView" destination="sTb-Jj-ij8" id="Q1Z-gJ-Dlj"/>
+                        <outlet property="answerPickerView" destination="78Z-Yo-dq3" id="cBI-zL-MWR"/>
+                        <outlet property="questionLabel" destination="IOg-Tg-VJ8" id="yZr-oL-Rwc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="172" y="-7.6461769115442282"/>
+            <point key="canvasLocation" x="7" y="-372"/>
         </scene>
     </scenes>
     <resources>
